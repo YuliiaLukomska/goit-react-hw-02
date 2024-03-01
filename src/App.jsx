@@ -8,8 +8,15 @@ function App() {
 
   const updateFeedback = (feedbackType) => {
     // Тут використовуй сеттер, щоб оновити стан
-    console.log(feedbackType);
-    setReviews((prevState) => prevState);
+    if (feedbackType === "good") {
+      setReviews({ ...reviews, good: reviews[feedbackType] + 1 });
+    } else if (feedbackType === "neutral") {
+      setReviews({ ...reviews, neutral: reviews[feedbackType] + 1 });
+    } else if (feedbackType === "bad") {
+      {
+        setReviews({ ...reviews, bad: reviews[feedbackType] + 1 });
+      }
+    }
   };
 
   return (
