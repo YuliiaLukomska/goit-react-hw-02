@@ -7,7 +7,9 @@ import Notification from "./components/Notification/Notification";
 function App() {
   const [reviews, setReviews] = useState({ good: 0, neutral: 0, bad: 0 });
   const totalFeedback = reviews.good + reviews.neutral + reviews.bad;
-
+  const positiveValue = Math.round(
+    ((reviews.good + reviews.neutral) / totalFeedback) * 100
+  );
   const updateFeedback = (feedbackType) => {
     console.log(feedbackType);
     if (feedbackType === "reset") {
@@ -41,6 +43,8 @@ function App() {
           goodReview={reviews.good}
           neutralReview={reviews.neutral}
           badReview={reviews.bad}
+          totalFeedbackValue={totalFeedback}
+          positiveValuePercent={positiveValue}
         />
       ) : (
         <Notification />

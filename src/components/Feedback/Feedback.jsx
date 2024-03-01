@@ -1,4 +1,10 @@
-const Feedback = ({ goodReview, neutralReview, badReview }) => {
+const Feedback = ({
+  goodReview,
+  neutralReview,
+  badReview,
+  totalFeedbackValue,
+  positiveValuePercent,
+}) => {
   return (
     <ul>
       <li>
@@ -10,6 +16,16 @@ const Feedback = ({ goodReview, neutralReview, badReview }) => {
       <li>
         <p>Bad: {badReview}</p>
       </li>
+      {totalFeedbackValue > 0 && (
+        <>
+          <li>
+            <p>Total: {totalFeedbackValue}</p>
+          </li>
+          <li>
+            <p>Positive: {positiveValuePercent}%</p>
+          </li>
+        </>
+      )}
     </ul>
   );
 };
