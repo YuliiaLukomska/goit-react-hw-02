@@ -1,4 +1,4 @@
-const Options = ({ reviewsObj, updateReviews }) => {
+const Options = ({ reviewsObj, updateReviews, totalFeedbackValue }) => {
   const reviewArray = Object.keys(reviewsObj);
 
   return (
@@ -8,6 +8,11 @@ const Options = ({ reviewsObj, updateReviews }) => {
           <button>{array[index]}</button>
         </li>
       ))}
+      {totalFeedbackValue > 0 && (
+        <li>
+          <button>reset</button>
+        </li>
+      )}
     </ul>
   );
 };
