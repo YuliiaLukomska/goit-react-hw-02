@@ -6,11 +6,22 @@ import Feedback from "./components/Feedback/Feedback";
 function App() {
   const [reviews, setReviews] = useState({ good: 0, neutral: 0, bad: 0 });
 
+  const updateFeedback = (feedbackType) => {
+    // Тут використовуй сеттер, щоб оновити стан
+    console.log(feedbackType);
+    setReviews((prevState) => prevState);
+  };
+
   return (
     <>
       <Description />
-      <Options reviewsObj={reviews} />
-      <Feedback />
+      <Options reviewsObj={reviews} updateReviews={updateFeedback} />
+      <Feedback
+        reviewsObj={reviews}
+        goodReview={reviews.good}
+        neutralReview={reviews.neutral}
+        badReview={reviews.bad}
+      />
     </>
   );
 }

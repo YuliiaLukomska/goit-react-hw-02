@@ -1,8 +1,8 @@
-const Options = ({ reviewsObj }) => {
+const Options = ({ reviewsObj, updateReviews }) => {
   const reviewArray = Object.keys(reviewsObj);
 
   return (
-    <ul>
+    <ul onClick={() => updateReviews(event.target.innerHTML)}>
       {reviewArray.map((review, index, array) => (
         <li key={index}>
           <button>{array[index]}</button>
