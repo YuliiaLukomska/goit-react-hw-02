@@ -5,7 +5,7 @@ const Options = ({ reviewsObj, updateReviews, totalFeedbackValue }) => {
 
   return (
     <ul
-      onClick={() => updateReviews(event.target.innerHTML)}
+      onClick={(event) => updateReviews(event.target.innerHTML)}
       className={css.buttonsWrapper}
     >
       {reviewArray.map((review, index, array) => (
